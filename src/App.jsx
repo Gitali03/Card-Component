@@ -1,19 +1,24 @@
+import "./App.css";
 
-import './App.css'
-
-import Card from './components/Card'
+import Card from "./components/Card";
 
 function App() {
-  
-  return <main>
-    <h1 className="page-header">Sektörel Raporlar</h1>
+  return (
+    <>
+      <h1 className="page-header">Sektörel Raporlar</h1>
 
-    <Card variant='big' />
+      <Card 
+        title='Güneş Enerjisi' 
+        variant="big" 
+        />
 
-    <div className='grid-container'>
-
-    </div>
-  </main>
+      <div className="grid-container">
+        <Card title="Güneş Enerjisi" />
+        <Card title="Güneş Enerjisi" />
+        <Card title="Güneş Enerjisi" />
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;

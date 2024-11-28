@@ -1,25 +1,28 @@
-import styles from './card.module.css'
+import PropTypes from "prop-types";
+import "./card.css";
 
-function Card({ variant }) {
-
+function Card({ 
+  variant = "small" ,
+  title,
+}) {
   return (
-    <div className={styles.asd}>
-      <div className="maincard-container">
-        <div className="maintitle-container">
-          <h1>Güneş Enerjisi</h1>
+    <div className={`card-container ${variant}`}>
+      <div className="text-container">
+        <div>
+          <h1>{title}</h1>
           <span>22.01.2022</span>
         </div>
-        <p className="card-exp">
-          PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin fırsat ve
+        <p>
+          PwC&apos;nin Küresel Risk Araştırması 2023, lider şirketlerin fırsat ve
           değer yaratma arayışında teknoloji ve verinin dönüştürücü gücünü
           benimseyerek riske bakış açılarını nasıl değiştirdiklerini ortaya
-          koyuyor. PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin
+          koyuyor. PwC&apos;nin Küresel Risk Araştırması 2023, lider şirketlerin
           fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü
           gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini
           ortaya koyuyor.
         </p>
-        <a href="" className="mainreport-link"
-          >Raporu Göster
+        <a href="javascript:void(0)">
+          Raporu Göster
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -29,18 +32,25 @@ function Card({ variant }) {
             viewBox="0 0 16 16"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
-              style="stroke: currentColor; stroke-width: 1.5; fill: none"
+              style={{
+                stroke: "currentColor",
+                strokeWidth: 1.5,
+                fill: "none",
+              }}
             />
           </svg>
         </a>
       </div>
-      <img src="mainimage.png" alt="Energy Solutions" className="maincard-img" />
+      <img src={`/${variant}.png`} alt="Energy Solutions" />
     </div>
-  )
+  );
 }
 
+Card.propTypes = {
+  title: PropTypes.string,
+  variant: PropTypes.oneOf(["small", "big"]),
+};
 
-
-export default Card
+export default Card;
