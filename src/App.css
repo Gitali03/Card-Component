@@ -34,3 +34,60 @@ body {
   row-gap: 36px;
   margin-top: 36px;
 }
+.show-link {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 auto;
+}
+.show-button {
+  width: 320px;
+  height: 50px;
+  font: Hind;
+  background-color: rgba(104, 128, 144, 1);
+  color: rgba(255, 255, 255, 1);
+  font-family: Hind;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  border-radius: 8px;
+  padding: 8px 16px 8px 16px;
+  opacity: 60%;
+  gap: 10px;
+  border: none;
+  margin-top: 36px;
+  margin-bottom: 22px;
+}
+@media (max-width: 850px) {
+  
+  .grid-container {
+    gap: 24px;
+    margin: 16px 0;
+  }
+}
+
+@media (max-width: 650px) {
+  
+  .grid-container {
+    gap: 24px;
+    margin: 0 16px;
+  }
+  .show-button {
+    background-image: linear-gradient(
+      to right,
+      rgb(86, 110, 134),
+      rgb(3, 20, 26)
+    );
+    width: 100%;
+  }
+  .show-link {
+    padding: 0 16px;
+    margin-top: -12px;
+  }
+  .page-header {
+    margin-left: 16px;
+  }
+}

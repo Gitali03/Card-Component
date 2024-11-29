@@ -1,26 +1,18 @@
 import PropTypes from "prop-types";
 import "./card.css";
 
-function Card({ 
-  variant = "small" ,
-  title,
-}) {
+function Card({ variant = "small", title, content }) {
+  const paragraphs = content.split('\n\n');
   return (
     <div className={`card-container ${variant}`}>
       <div className="text-container">
         <div>
-          <h1>{title}</h1>
+          <h2>{title}</h2>
           <span>22.01.2022</span>
         </div>
-        <p>
-          PwC&apos;nin Küresel Risk Araştırması 2023, lider şirketlerin fırsat ve
-          değer yaratma arayışında teknoloji ve verinin dönüştürücü gücünü
-          benimseyerek riske bakış açılarını nasıl değiştirdiklerini ortaya
-          koyuyor. PwC&apos;nin Küresel Risk Araştırması 2023, lider şirketlerin
-          fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü
-          gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini
-          ortaya koyuyor.
-        </p>
+        {paragraphs.map((paragraph, index) => (
+          <p key={index} style={{ marginBottom: '2em' }}>{paragraph.trim()}</p>  
+        ))}
         <a href="javascript:void(0)">
           Raporu Göster
           <svg
@@ -45,6 +37,7 @@ function Card({
       </div>
       <img src={`/${variant}.png`} alt="Energy Solutions" />
     </div>
+
   );
 }
 
