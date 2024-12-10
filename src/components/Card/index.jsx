@@ -1,43 +1,27 @@
 import PropTypes from "prop-types";
 import "./card.css";
+import IconArrowRight from "../icons/IconArrowRight";
 
 function Card({ variant = "small", title, content }) {
-  const paragraphs = content.split('\n\n');
   return (
+  
+    
     <div className={`card-container ${variant}`}>
       <div className="text-container">
         <div>
           <h2>{title}</h2>
           <span>22.01.2022</span>
         </div>
-        {paragraphs.map((paragraph, index) => (
-          <p key={index} style={{ marginBottom: '2em' }}>{paragraph.trim()}</p>  
-        ))}
+        <p>{content}</p>
+      
         <a href="javascript:void(0)">
           Raporu Göster
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="bi bi-chevron-right"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
-              style={{
-                stroke: "currentColor",
-                strokeWidth: 1.5,
-                fill: "none",
-              }}
-            />
-          </svg>
+          <IconArrowRight/>
+          <IconArrowRight width={90} height={180} fill="pink"  className="bi-chevron"/>
         </a>
       </div>
       <img src={`/${variant}.png`} alt="Energy Solutions" />
     </div>
-
   );
 }
 
