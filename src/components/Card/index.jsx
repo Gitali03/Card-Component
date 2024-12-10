@@ -4,8 +4,6 @@ import IconArrowRight from "../icons/IconArrowRight";
 
 function Card({ variant = "small", title, content }) {
   return (
-  
-    
     <div className={`card-container ${variant}`}>
       <div className="text-container">
         <div>
@@ -13,11 +11,10 @@ function Card({ variant = "small", title, content }) {
           <span>22.01.2022</span>
         </div>
         <p>{content}</p>
-      
+
         <a href="javascript:void(0)">
           Raporu Göster
-          <IconArrowRight/>
-         
+          <IconArrowRight />
         </a>
       </div>
       <img src={`/${variant}.png`} alt="Energy Solutions" />

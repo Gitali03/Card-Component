@@ -108,9 +108,7 @@ ortaya koyuyor.`,
               variant={item.variant}
               title={item.title}
               content={item.content.map((paragraph) => (
-                <p key={paragraph.id}>
-                  {paragraph.text.trim()}
-                </p>
+                <p key={paragraph.id}>{paragraph.text.trim()}</p>
               ))}
             />
           ))}
