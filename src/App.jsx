@@ -3,12 +3,20 @@ import "./App.css";
 import Card from "./components/Card";
 
 function App() {
- 
   const cardData = [
     {
       id: 1,
       title: "Güneş Enerjisi",
-      content: `PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini ortaya koyuyor.PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini ortaya koyuyor.`,
+      content: [
+        {
+          id: "para1",
+          text: "PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini ortaya koyuyor.",
+        },
+        {
+          id: "para2",
+          text: "PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini ortaya koyuyor.",
+        },
+      ],
       variant: "big",
     },
     {
@@ -78,7 +86,7 @@ ortaya koyuyor.`,
 fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü
 gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini
 ortaya koyuyor.`,
-      variant: "small"
+      variant: "small",
     },
     {
       id: 11,
@@ -99,10 +107,15 @@ ortaya koyuyor.`,
               key={item.id}
               variant={item.variant}
               title={item.title}
-              content={item.content}
+              content={item.content.map((paragraph) => (
+                <p key={paragraph.id}>
+                  {paragraph.text.trim()}
+                </p>
+              ))}
             />
           ))}
       </div>
+
       <div className="grid-container">
         {cardData
           .filter((item) => item.variant === "small")

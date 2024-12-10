@@ -1,5 +1,4 @@
 .card-container {
-  font-family: Hind;
   padding: 24px;
   width: 100%;
   height: 100%;
@@ -48,7 +47,6 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
-  font-family: Hind;
   font-size: 20px;
   font-weight: 600;
   line-height: 30px;
@@ -58,7 +56,6 @@
   text-decoration-skip-ink: none;
 }
 .text-container span {
-  font-family: Hind;
   color: rgba(72, 96, 114, 1);
   font-size: 16px;
   font-weight: 400;
@@ -68,10 +65,10 @@
 }
 .text-container p {
   line-height: 25.62px;
-  font-family: Hind;
   font-size: 16px;
   font-weight: 400;
   color: rgba(72, 96, 114, 1);
+  margin-bottom: 2em;
 }
 .card-container.small p {
   margin-bottom: 0em;

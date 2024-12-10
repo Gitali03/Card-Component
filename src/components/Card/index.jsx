@@ -17,7 +17,7 @@ function Card({ variant = "small", title, content }) {
         <a href="javascript:void(0)">
           Raporu Göster
           <IconArrowRight/>
-          <IconArrowRight width={90} height={180} fill="pink"  className="bi-chevron"/>
+         
         </a>
       </div>
       <img src={`/${variant}.png`} alt="Energy Solutions" />
@@ -28,6 +28,7 @@ function Card({ variant = "small", title, content }) {
 Card.propTypes = {
   title: PropTypes.string,
   variant: PropTypes.oneOf(["small", "big"]),
+  content: PropTypes.string,
 };
 
 export default Card;
