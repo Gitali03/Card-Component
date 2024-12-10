@@ -5,37 +5,28 @@ import Card from "./components/Card";
 function App() {
   const cardData = [
     {
-      id: 1,
+      id: crypto.randomUUID(),
       title: "Güneş Enerjisi",
-      content: [
-        {
-          id: "para1",
-          text: "PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini ortaya koyuyor.",
-        },
-        {
-          id: "para2",
-          text: "PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini ortaya koyuyor.",
-        },
-      ],
+      content: `PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini ortaya koyuyor.<br/><br/>PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini ortaya koyuyor.`,
       variant: "big",
     },
     {
-      id: 2,
+      id: crypto.randomUUID(),
       title: "Rüzgar Enerjisi",
       content: `PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin
 fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü
 gücünü benimseyerek riske bakış açılarını nasıl değiştirdiklerini
 ortaya koyuyor.`,
-      variant: "small",
+      variant: "small"
     },
     {
-      id: 3,
+      id: crypto.randomUUID(),
       title: "Nükleer Enerji",
       content: `Yenilenebilir enerji yatırımlarının artışı, özellikle rüzgar enerjisi alanında küresel enerji talebinin önemli bir kısmını karşılamaya başladı...`,
       variant: "small",
     },
     {
-      id: 4,
+      id: crypto.randomUUID(),
       title: "Jeotermal Enerji",
       content: `PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin
 fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü
@@ -44,13 +35,13 @@ ortaya koyuyor.`,
       variant: "small",
     },
     {
-      id: 5,
+      id: crypto.randomUUID(),
       title: "Rüzgar Enerjisi",
       content: `Yenilenebilir enerji yatırımlarının artışı, özellikle rüzgar enerjisi alanında küresel enerji talebinin önemli bir kısmını karşılamaya başladı...`,
       variant: "small",
     },
     {
-      id: 6,
+      id: crypto.randomUUID(),
       title: "Nükleer Enerji",
       content: `PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin
 fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü
@@ -59,13 +50,13 @@ ortaya koyuyor.`,
       variant: "small",
     },
     {
-      id: 7,
+      id: crypto.randomUUID(),
       title: "Jeotermal Enerji",
       content: `Yenilenebilir enerji yatırımlarının artışı, özellikle rüzgar enerjisi alanında küresel enerji talebinin önemli bir kısmını karşılamaya başladı...`,
       variant: "small",
     },
     {
-      id: 8,
+      id: crypto.randomUUID(),
       title: "Rüzgar Enerjisi",
       content: `PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin
 fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü
@@ -74,13 +65,13 @@ ortaya koyuyor.`,
       variant: "small",
     },
     {
-      id: 9,
+      id: crypto.randomUUID(),
       title: "Nükleer Enerji",
       content: `Yenilenebilir enerji yatırımlarının artışı, özellikle rüzgar enerjisi alanında küresel enerji talebinin önemli bir kısmını karşılamaya başladı...`,
       variant: "small",
     },
     {
-      id: 10,
+      id: crypto.randomUUID(),
       title: "Jeotermal Enerji",
       content: `PwC'nin Küresel Risk Araştırması 2023, lider şirketlerin
 fırsat ve değer yaratma arayışında teknoloji ve verinin dönüştürücü
@@ -89,7 +80,7 @@ ortaya koyuyor.`,
       variant: "small",
     },
     {
-      id: 11,
+      id: crypto.randomUUID(),
       title: "Nükleer Enerji",
       content: `Yenilenebilir enerji yatırımlarının artışı, özellikle rüzgar enerjisi alanında küresel enerji talebinin önemli bir kısmını karşılamaya başladı...`,
       variant: "small",
@@ -105,11 +96,9 @@ ortaya koyuyor.`,
           .map((item) => (
             <Card
               key={item.id}
-              variant={item.variant}
               title={item.title}
-              content={item.content.map((paragraph) => (
-                <p key={paragraph.id}>{paragraph.text.trim()}</p>
-              ))}
+              variant={item.variant}
+              content={item.content}
             />
           ))}
       </div>
@@ -120,8 +109,8 @@ ortaya koyuyor.`,
           .map((item) => (
             <Card
               key={item.id}
-              variant={item.variant}
               title={item.title}
+              variant={item.variant}
               content={item.content}
             />
           ))}

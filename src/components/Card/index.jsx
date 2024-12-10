@@ -10,11 +10,15 @@ function Card({ variant = "small", title, content }) {
           <h2>{title}</h2>
           <span>22.01.2022</span>
         </div>
-        <p>{content}</p>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: content,
+          }}
+        />
 
         <a href="javascript:void(0)">
           Raporu Göster
-          <IconArrowRight />
+          <IconArrowRight  />
         </a>
       </div>
       <img src={`/${variant}.png`} alt="Energy Solutions" />

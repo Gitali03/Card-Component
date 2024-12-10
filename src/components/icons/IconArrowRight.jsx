@@ -1,12 +1,13 @@
-const IconArrowRight = (props) => (
+import PropTypes from "prop-types";
+
+const IconArrowRight = ({ size = 16, color = "currentColor" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    fill="currentColor"
+    width={size}
+    height={size}
+    fill={color}
     className="bi bi-chevron-right"
     viewBox="0 0 16 16"
-    {...props}
   >
     <path
       fillRule="evenodd"
@@ -18,5 +19,10 @@ const IconArrowRight = (props) => (
     />
   </svg>
 );
+
+IconArrowRight.propTypes = {
+  size: PropTypes.number,
+  color: PropTypes.string,
+};
 
 export default IconArrowRight;
